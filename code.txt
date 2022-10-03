@@ -1,0 +1,21 @@
+code to run in julia:
+
+first part (fix path to wherever you have the folder I sent, use \\ instead of /):
+
+pwd();
+cd("C:\\Users\\tizge\\Desktop\\Julia_tutorial");
+using Pkg;
+Pkg.add(["Omniscape", "GeoData", "Plots"]);
+using Omniscape;
+run_omniscape("parameters.ini")
+
+
+part 2:
+using GeoData;
+normalized_current = GDALarray("output_folder/normalized_cum_currmap.tif");
+using Plots;
+plot(normalized_current,
+                   title = "Normalized Current Flow", xlabel = "Easting", ylabel = "Northing")
+
+
+
